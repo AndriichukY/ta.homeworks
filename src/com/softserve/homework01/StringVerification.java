@@ -9,12 +9,8 @@ public class StringVerification {
         for (int index = 0; index < text.length(); index++) {
             if (text.charAt(index) == '(') {
                 stack.addElement(text.charAt(index));
-            } else {
-                if (stack.empty()) {
-                    return false;
-                }
-
-                if ((text.charAt(index) == ')') && (stack.peek() != '(')) {
+            } else if ((text.charAt(index) == ')')) {
+                if (stack.empty()){
                     return false;
                 }
 
